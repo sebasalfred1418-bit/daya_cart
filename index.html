@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#ffe3ee">
+<title>Para Dayana 🎀</title>
+<meta name="description" content="Una pequeña carta hecha con cariño para Dayana.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fondo decorativo -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+
+  <!-- Capa de corazones / estrellas flotantes -->
+  <div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+
+  <main class="app" id="app">
+
+    <!-- Indicador de progreso -->
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- PORTADA -->
+    <section class="screen cover active" data-screen="cover">
+      <div class="cover-card">
+        <div class="kitty kitty-cover" aria-hidden="true">
+          <svg viewBox="0 0 200 190" class="kitty-svg">
+            <ellipse class="k-ear" cx="52" cy="38" rx="26" ry="24"/>
+            <ellipse class="k-ear" cx="148" cy="38" rx="26" ry="24"/>
+            <ellipse class="k-face" cx="100" cy="92" rx="78" ry="70"/>
+            <path class="k-bow" d="M78 40 C60 24, 34 30, 40 48 C34 62, 60 60, 78 48 C60 60, 66 78, 78 66 C90 78, 96 60, 78 48 C96 60, 122 62, 116 48 C122 30, 96 24, 78 40 Z"/>
+            <circle class="k-bow-center" cx="78" cy="48" r="7"/>
+            <ellipse class="k-eye" cx="72" cy="96" rx="4.5" ry="6"/>
+            <ellipse class="k-eye" cx="128" cy="96" rx="4.5" ry="6"/>
+            <ellipse class="k-nose" cx="100" cy="110" rx="6" ry="4.5"/>
+            <g class="k-whiskers">
+              <line x1="18" y1="98" x2="58" y2="94"/>
+              <line x1="18" y1="112" x2="58" y2="112"/>
+              <line x1="18" y1="126" x2="58" y2="120"/>
+              <line x1="182" y1="98" x2="142" y2="94"/>
+              <line x1="182" y1="112" x2="142" y2="112"/>
+              <line x1="182" y1="126" x2="142" y2="120"/>
+            </g>
+          </svg>
+        </div>
+
+        <p class="eyebrow">una pequeña carta para</p>
+        <h1 class="cover-title">Dayana</h1>
+        <p class="cover-sub">hecha con cariño, mensaje por mensaje.</p>
+
+        <button class="btn-primary" id="startBtn" type="button">
+          <span>Abrir mi carta</span>
+          <span class="bow-emoji">🎀</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PANTALLA DE MENSAJES (reutilizada) -->
+    <section class="screen message" data-screen="message" id="messageScreen">
+      <div class="message-card">
+        <div class="mini-decor" id="miniDecor" aria-hidden="true">🎀</div>
+        <p class="message-text" id="messageText"></p>
+        <button class="btn-next" id="nextBtn" type="button">
+          <span id="nextBtnLabel">Siguiente</span>
+          <span class="arrow">➜</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PANTALLA ESPECIAL: SOBRE CERRADO -->
+    <section class="screen final-cover" data-screen="final-cover" id="finalCover">
+      <div class="final-cover-inner">
+        <p class="eyebrow">para ti, con todo mi corazón</p>
+
+        <div class="envelope-wrap">
+          <div class="envelope" id="envelope">
+            <div class="envelope-shadow"></div>
+            <div class="envelope-back"></div>
+            <div class="letter-peek"></div>
+            <div class="envelope-flap"></div>
+            <div class="kitty-sit" aria-hidden="true">
+              <svg viewBox="0 0 200 170" class="kitty-svg">
+                <ellipse class="k-ear" cx="58" cy="34" rx="22" ry="20"/>
+                <ellipse class="k-ear" cx="142" cy="34" rx="22" ry="20"/>
+                <ellipse class="k-face" cx="100" cy="82" rx="70" ry="62"/>
+                <path class="k-bow" d="M82 34 C66 20, 44 26, 50 42 C44 54, 66 52, 82 42 C66 52, 72 68, 82 58 C92 68, 98 52, 82 42 C98 52, 120 54, 114 42 C120 26, 98 20, 82 34 Z"/>
+                <circle class="k-bow-center" cx="82" cy="42" r="6"/>
+                <ellipse class="k-eye" cx="76" cy="84" rx="4" ry="5.5"/>
+                <ellipse class="k-eye" cx="124" cy="84" rx="4" ry="5.5"/>
+                <ellipse class="k-nose" cx="100" cy="96" rx="5.5" ry="4"/>
+                <g class="k-whiskers">
+                  <line x1="26" y1="86" x2="60" y2="82"/>
+                  <line x1="26" y1="98" x2="60" y2="98"/>
+                  <line x1="174" y1="86" x2="140" y2="82"/>
+                  <line x1="174" y1="98" x2="140" y2="98"/>
+                </g>
+                <ellipse class="k-body" cx="100" cy="150" rx="46" ry="26"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-primary btn-open" id="openBtn" type="button">
+          <span>ABRIR</span>
+          <span class="bow-emoji">🎀</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PANTALLA ESPECIAL: MENSAJE FINAL -->
+    <section class="screen final-message" data-screen="final-message" id="finalMessage">
+      <div class="final-message-card">
+        <div class="final-decor" aria-hidden="true">
+          <span class="deco-star s1">✦</span>
+          <span class="deco-heart h1">♡</span>
+          <span class="deco-star s2">✧</span>
+          <span class="deco-bow b1">🎀</span>
+        </div>
+        <div class="final-message-inner" id="finalMessageInner"></div>
+        <button class="btn-continue" id="continueBtn" type="button">
+          <span>seguir leyendo</span>
+          <span class="heart">❤</span>
+        </button>
+        <p class="signature" id="signature">con todo mi cariño</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
